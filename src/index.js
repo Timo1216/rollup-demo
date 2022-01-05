@@ -1,9 +1,18 @@
 // src/index.js
 import foo from './foo.js';
-import { version } from '../package.json'; // tree-shanking 摇走了其他 name devDependency
+// import { version } from '../package.json'; // tree-shanking 摇走了其他 name devDependency
+
+import { isArray } from 'lodash-es';
+// import isArray from 'lodash/isArray';
+
 export default function () {
-  console.log(foo);
-  console.log('version2341 woshi123 --->',version);
+  if (isArray([])) {
+    console.log(foo);
+    console.log('1 --->',1);
+    console.log('2 --->',2);
+  }
+  console.log('3 --->',3);
+  // console.log('version2341 woshi123 --->',version);
 }
 
 
